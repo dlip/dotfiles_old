@@ -1,0 +1,7 @@
+Host schubert
+  HostName schubert.baselinesolutions.com.au
+  User dlipscombe
+
+Host chopin
+  HostName chopin.baselinesolutions.com.au
+  User dlipscombe

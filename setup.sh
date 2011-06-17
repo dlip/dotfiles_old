@@ -2,6 +2,7 @@
 dotfiles=( 
   "bashrc" 
   "bash_profile" 
+  "ssh/config" 
 )
 
 for f in "${dotfiles[@]}"
