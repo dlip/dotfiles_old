@@ -1,0 +1,27 @@
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/commandt"]
+	path = vim/bundle/commandt
+	url = https://github.com/vim-scripts/Command-T.git
+[submodule "vim/bundle/colors-solarized"]
+	path = vim/bundle/colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/colors-vividchalk"]
+	path = vim/bundle/colors-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "vim/bundle/coffee-script"]
+	path = vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/coffee-snippets/snippets"]
+	path = vim/bundle/coffee-snippets/snippets
+	url = https://github.com/sdiehl/coffee-snippets.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
