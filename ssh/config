@@ -5,3 +5,11 @@ Host schubert
 Host chopin
   HostName chopin.baselinesolutions.com.au
   User dlipscombe
+
+Host wdlxtv
+  HostName wdlxtv.lipscombe.com.au
+  User root
+  
+Host b2cloud
+  HostName b2cloud.com.au
+  User b2cloud

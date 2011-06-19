@@ -3,6 +3,7 @@ dotfiles=(
   "bashrc" 
   "bash_profile" 
   "ssh/config" 
+  "xmonad" 
 )
 
 for f in "${dotfiles[@]}"
