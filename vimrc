@@ -161,6 +161,9 @@ vnoremap <C-X> "+x
 vnoremap <C-C> "+y
 map      <C-V> "+gP
 
+"Map ctrl-a to escape
+imap      <C-A> <Esc>
+
 "Stop delete/change from yanking
 "nnoremap d "_d
 "vnoremap d "_d

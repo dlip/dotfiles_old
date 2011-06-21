@@ -6,6 +6,7 @@ dotfiles=(
   "bash_profile" 
   "ssh/config" 
   "xmonad" 
+  "Xmodmap" 
 )
 
 for f in "${dotfiles[@]}"
