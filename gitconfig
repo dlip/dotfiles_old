@@ -1,0 +1,13 @@
+[user]
+	name = Dane Lipscombe
+	email = dane@lipscobme.com.au
+
+[alias]
+  co = checkout
+  br = branch
+  sm = submodule
+	d = difftool
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

@@ -7,6 +7,7 @@ dotfiles=(
   "ssh/config" 
   "xmonad" 
   "Xmodmap" 
+  "gitconfig" 
 )
 
 for f in "${dotfiles[@]}"
