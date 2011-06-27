@@ -102,9 +102,8 @@ if has("gui_running")
   set guioptions-=m
   set t_Co=256
   set background=dark
-  colorscheme solarized
+  colorscheme molokai
 else
-  set background=dark
   colorscheme vividchalk
 endif
 
