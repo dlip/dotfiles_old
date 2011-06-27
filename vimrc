@@ -83,7 +83,6 @@ set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
-
 " Set font according to system
 if has('mac')
   set gfn=Consolas:h14
@@ -161,6 +160,7 @@ vnoremap <C-X> "+x
 vnoremap <C-C> "+y
 map      <C-V> "+gP
 
+nmap <leader>l :Calendar<cr>
 "Stop delete/change from yanking
 "nnoremap d "_d
 "vnoremap d "_d
