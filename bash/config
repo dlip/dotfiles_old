@@ -43,3 +43,6 @@ BWHITE='\e[47m'
 PS1="\n\u:\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n→ "
 
 set -o vi
+
+# add git completion
+. ~/dotfiles/bash/git-completion.bash
