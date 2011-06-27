@@ -23,7 +23,7 @@ let g:mapleader = "\<space>"
 set autoread
 
 " Fast saving
-nmap <leader>w :w!<cr>
+" nmap <leader>w :w!<cr>
 command! W :w
 
 " Fast editing of the .vimrc
@@ -104,6 +104,7 @@ if has("gui_running")
   set background=dark
   colorscheme molokai
 else
+  set background=dark
   colorscheme vividchalk
 endif
 
