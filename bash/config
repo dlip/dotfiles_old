@@ -1,11 +1,3 @@
-# add git completion
-. ~/dotfiles/bash/git-completion.bash
-
-# add git completion
-. ~/dotfiles/bash/vi-bindings.bash
-
-set -o vi
-
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # misc
 NO_COLOR='\e[0m' #disable any colors
@@ -49,4 +41,3 @@ BWHITE='\e[47m'
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
 PS1="\n\u:\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n→ "
-
