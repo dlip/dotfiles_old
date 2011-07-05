@@ -170,3 +170,8 @@ nmap <leader>l :Calendar<cr>
 "vnoremap c "_c
 "nnoremap C "_C
 "vnoremap C "_C
+
+"Move wiki folder on windows
+if has('win32')
+  let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
+endif  
