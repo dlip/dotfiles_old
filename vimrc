@@ -68,6 +68,7 @@ set showmatch "Show matching bracets when text indicator is over them
 
 set mat=1 "How many tenths of a second to blink
 
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -161,6 +162,11 @@ vnoremap <C-C> "+y
 map      <C-V> "+gP
 
 nmap <leader>l :Calendar<cr>
+
+"Git commands
+nmap <silent> <leader>gl :silent Git log --graph --abbrev-commit --date=relative<cr>
+nmap <silent> <leader>gs :Gstatus<cr>
+
 "Stop delete/change from yanking
 "nnoremap d "_d
 "vnoremap d "_d
