@@ -1,4 +1,4 @@
-if [ -f ~/.bashrc];
+if [ -a ~/.bashrc ]
 then
   source ~/.bashrc
 fi
