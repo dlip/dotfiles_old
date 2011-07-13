@@ -78,6 +78,7 @@ set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
+set backspace=indent,eol,start
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
