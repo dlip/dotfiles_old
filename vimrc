@@ -182,3 +182,27 @@ nmap <silent> <leader>gs :Gstatus<cr>
 if has('win32')
   let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
 endif  
+
+" Enter, open line
+nnoremap <CR> i<CR><Esc>|
+inoremap <S-CR> <CR>|
+nnoremap <S-CR> O<Esc>|
+nnoremap <C-CR> o<Esc>|inoremap <C-CR> <C-o>o|
+
+" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
+" To minimize Tab use, you can use '<', '>' and ':set autoindent'
+nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
+vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
+inoremap <Tab> <Esc>|
+nnoremap <S-Tab> i<Tab><Esc><Right>
+vnoremap <S-Tab> >gv|
+inoremap <S-Tab> <Tab>|
+
+" Delete/Backspace
+nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
+nnoremap <Delete> "_x|vnoremap <Delete> "_d|
+nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
+nnoremap <C-Backspace> a<Left><C-W><Right><Esc>|inoremap <C-Backspace> <C-w>|cnoremap <C-Backspace> <C-w>|
+nnoremap <C-Delete> "_dw|inoremap <C-Delete> <C-o>"_dw|cnoremap <C-Delete> <Delete>|
+nnoremap <S-Backspace> "_d^|inoremap <S-Backspace> <Backspace>|cnoremap <S-Backspace> <Backspace>|
+nnoremap <S-Delete> "_d$|inoremap <S-Delete> <Delete>|cnoremap <S-Delete> <Delete>|
