@@ -1,0 +1,133 @@
+set incsearch
+set ignorecase
+set hlsearch
+
+" Up/down/left/right
+nnoremap n h
+xnoremap n h
+onoremap n h
+nnoremap u k
+xnoremap u k
+onoremap u k
+
+nnoremap e j
+xnoremap e j
+onoremap e j
+
+nnoremap i l
+xnoremap i l
+onoremap i l
+
+" Home/end of line
+" 0 unchanged
+nnoremap L ^
+xnoremap L ^
+onoremap L ^
+
+nnoremap Y $
+xnoremap Y $
+onoremap Y $
+
+cnoremap <M-j> <PageUp>|
+cnoremap <M-h> <PageDown>|
+
+" Words forwards/backwards
+nnoremap l b
+xnoremap l b
+onoremap l b
+
+nnoremap y w
+xnoremap y w
+onoremap y w
+
+" inneR text objects
+" e.g. dip (delete inner paragraph) is now drp
+onoremap r i
+
+" Map ; to :
+nnoremap ; :
+xnoremap ; :
+
+" Cut/copy/paste
+nnoremap x x
+xnoremap x d
+nnoremap c y
+xnoremap c y
+nnoremap v gP
+xnoremap v gP
+nnoremap X dd
+xnoremap X d
+nnoremap C yy
+xnoremap C y
+nnoremap V p
+xnoremap V p
+
+" Undo/redo
+nnoremap z u
+xnoremap z :<C-u>undo<CR>
+
+" inSert/Replace/append (T)
+nnoremap s i
+nnoremap S I
+nnoremap t a
+nnoremap T A
+
+" Change
+nnoremap w c
+xnoremap w c
+nnoremap W C
+xnoremap W C
+nnoremap ww cc
+
+" Visual mode
+nnoremap a v
+xnoremap a v
+nnoremap A V
+xnoremap A V
+
+" Search
+" f unchanged
+" F unchanged
+nnoremap p t
+xnoremap p t
+onoremap p t
+nnoremap P T
+xnoremap P T
+onoremap P T
+nnoremap b ;
+xnoremap b ;
+onoremap b ;
+nnoremap B ,
+xnoremap B ,
+onoremap B ,
+nnoremap k n
+xnoremap k n
+onoremap k n
+nnoremap K N
+xnoremap K N
+onoremap K N
+
+" Macros (replay the macro recorded by qq)
+nnoremap Q @q
+
+" Insert space in normal mode
+nnoremap <Space> i<Space><Esc><Right>
+
+" Enter, open line
+nnoremap <CR> i<CR><Esc>
+
+" Delete/Backspace
+nnoremap <C-d> "_dw
+vnoremap <C-d> "_d
+inoremap <C-d> <Delete>
+cnoremap <C-d> <Delete>
+nnoremap <Delete> "_x
+vnoremap <Delete> "_d
+nnoremap <Backspace> a<Left><Backspace><Right><Esc>
+vnoremap <Backspace> "_d
+
+" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
+" To minimize Tab use, you can use '<', '>' and ':set autoindent'
+nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
+vnoremap <Tab> <Esc><Nul>
+inoremap <Tab> <Esc>
