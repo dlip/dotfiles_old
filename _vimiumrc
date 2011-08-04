@@ -1,0 +1,24 @@
+" Vimium configuration using Colemak
+unmapAll
+
+" Navigation
+map e scrollDown
+map u scrollUp
+map n scrollLeft
+map i scrollRight
+map E scrollPageDown
+map U scrollPageUp
+
+" Using Find
+map / enterFindMode
+map k performFind
+map K performBackwardsFind
+
+" Navigating history
+map N goBack
+map I goForward
+
+
+" Manipulating tabs
+map y nextTab
+map l previousTab
