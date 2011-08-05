@@ -16,8 +16,8 @@ set nocompatible
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = "\<space>"
-let g:mapleader = "\<space>"
+let mapleader = ","
+let g:mapleader = ","
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -133,7 +133,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <left> :tabprev<cr>
 map <right> :tabnext<cr>
-
+ 
 " Scroll thru buffers with up/down
 map <up> :bp<cr>
 map <down> :bn<cr>
@@ -183,26 +183,135 @@ if has('win32')
   let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
 endif  
 
-" Enter, open line
-nnoremap <CR> i<CR><Esc>|
-inoremap <S-CR> <CR>|
-nnoremap <S-CR> O<Esc>|
-nnoremap <C-CR> o<Esc>|inoremap <C-CR> <C-o>o|
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => COLEMAK
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Redesigned mapping for the Colemak layout for Vim 7
+" Most ideas ripped off of Shai Coleman's `colemak.vim`
+" This alternative version created by TaylanUB
+" Revision 2010-04-03
+"
+" n = Left       ,  i = Right      ,  u = Up    ,  e = Down      
+" N = Left*5     ,  I = Right*5    ,  U = Up*5  ,  E = Down*5    
+" l = Prev word  ,  y = Next word
+" L = Prev WORD  ,  Y = Next WORD
+" j = PageUp     ,  h = PageDown              
+" - = BOF        ,  _ = EOF        ,  <count>- = Goto line
+"
+" You can use Tab in place of Esc, to quit insert mode.
+" Tab also stops search highlighting, in normal mode.
+" Use S-Tab for literal tabs, in insert mode.
+" 
+" Space appends a space in normal mode.
+"
+" s/S is now a/A (Alter)
+" i/I is now s/S (Stick)
+" a/A is now t/T (Tail)
+" t/T is now b/B (Before)
+" y/Y is now c/C (Copy)
+" c/C is now w/W (sWap)
+" n/N is now k/K (seeK)
+" undo/redo is z/Z (Zap)
+" line-Undo is gu  (Great Undo)
+"
+" Use '\' for 'z'
+" Use 'gg' for 'zz'
+" Use 'G' for 'L'
+"
+" inner object is now 'r'
+" e.g. dib is now drb
+"
+" For X clipboard yanking:
+" CC is "+yy
+" Cc is "*yy
+" Cp is "+p
+" CP is "+P
+" cp is "*p
+" cP is "*P
+"
+" In a help file:
+"  <CR>, > = goto tag
+"  <BS>, < = back
+"  S-Space = PageUp
+"    Space = PageDown
+"
 
-" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
-" To minimize Tab use, you can use '<', '>' and ':set autoindent'
-nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
+" Navigation
+nnoremap n h|xnoremap n h|onoremap n h|
+nnoremap u k|xnoremap u k|onoremap u k|
+nnoremap e j|xnoremap e j|onoremap e j|
+nnoremap i l|xnoremap i l|onoremap i l|
+" Turbo
+nnoremap <silent> N @='5h'<CR>|xnoremap <silent> N @='5h'<CR>|onoremap N 5h|
+nnoremap <silent> U @='5k'<CR>|xnoremap <silent> U @='5k'<CR>|onoremap U 5k|
+nnoremap <silent> E @='5j'<CR>|xnoremap <silent> E @='5j'<CR>|onoremap E 5j|
+nnoremap <silent> I @='5l'<CR>|xnoremap <silent> I @='5l'<CR>|onoremap I 5l|
+" Word/WORD
+nnoremap l b|xnoremap l b|onoremap l b|
+nnoremap y w|xnoremap y w|onoremap y w|
+nnoremap L B|vnoremap L B|onoremap L B|
+nnoremap Y W|vnoremap Y W|onoremap Y W|
+" PageUp/PageDown
+nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
+nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
+xnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
+xnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
+" Jump to line
+nnoremap - gg|xnoremap - gg|onoremap - gg|
+nnoremap _ G|xnoremap _ G|onoremap _ G|
+nnoremap G L|
+" Insert
+nnoremap s i|
+nnoremap S I|
+" Append
+nnoremap t a|
+nnoremap T A|
+" Substitute
+nnoremap a s|
+nnoremap A S|
+" Yank
+nnoremap c y|xnoremap c y|
+nnoremap cc yy|xnoremap cc yy|
+nnoremap C Y|xnoremap C Y|
+" Change
+nnoremap w c|xnoremap w c|
+nnoremap W C|xnoremap W C|
+nnoremap ww cc|xnoremap ww cc|
+" Till
+nnoremap b t|xnoremap b t|onoremap b t|
+nnoremap B T|xnoremap B T|onoremap B T|
+" Search Next/Prev
+nnoremap k n|xnoremap k n|onoremap k n|
+nnoremap K N|xnoremap K N|onoremap K N|
+" Undo/Redo
+nnoremap z u|xnoremap z :<C-u>undo<CR>|
+nnoremap Z <C-r>|xnoremap Z :<C-u>redo<CR>|
+nnoremap gz U|xnoremap gz U<C-u>undo<CR>|
+" Folds
+nnoremap \ z|
+" zz
+nnoremap gg zz|
+" Inner Object
+onoremap r i|
+" Space
+nnoremap <Space> i<Space><Right><Esc>|
+" Escape/Tab
+nnoremap <silent> <Tab> :nohlsearch<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
-nnoremap <S-Tab> i<Tab><Esc><Right>
-vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
+" X clipboard yanking
+nnoremap CC "+yy|
+nnoremap Cc "*yy|
+nnoremap Cp "+p|
+nnoremap CP "+P|
+nnoremap cp "*p|
+nnoremap cP "*P|
+" Help-file navigation
+au FileType help nnoremap <buffer> < <C-t>|
+au FileType help nnoremap <buffer> > <C-]>|
+au FileType help nnoremap <buffer> <CR> <C-]>|
+au FileType help nnoremap <buffer> <Backspace> <C-t>|
+au FileType help nnoremap <buffer> <silent> <expr> <Space> (winheight(0)-1) . "\<C-d>0"|
+au FileType help nnoremap <buffer> <silent> <expr> <S-Space> (winheight(0)-1) . "\<C-u>0"|
 
-" Delete/Backspace
-nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
-nnoremap <Delete> "_x|vnoremap <Delete> "_d|
-nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
-nnoremap <C-Backspace> a<Left><C-W><Right><Esc>|inoremap <C-Backspace> <C-w>|cnoremap <C-Backspace> <C-w>|
-nnoremap <C-Delete> "_dw|inoremap <C-Delete> <C-o>"_dw|cnoremap <C-Delete> <Delete>|
-nnoremap <S-Backspace> "_d^|inoremap <S-Backspace> <Backspace>|cnoremap <S-Backspace> <Backspace>|
-nnoremap <S-Delete> "_d$|inoremap <S-Delete> <Delete>|cnoremap <S-Delete> <Delete>|
