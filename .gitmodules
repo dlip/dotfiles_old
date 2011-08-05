@@ -25,3 +25,6 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = http://github.com/vim-scripts/vimwiki.git
+[submodule "vim/bundle/xptemplate"]
+	path = vim/bundle/xptemplate
+	url = http://github.com/drmingdrmer/xptemplate.git
