@@ -14,11 +14,6 @@ set history=300
 "new vim mode
 set nocompatible
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
-
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -186,132 +181,178 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COLEMAK
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Redesigned mapping for the Colemak layout for Vim 7
-" Most ideas ripped off of Shai Coleman's `colemak.vim`
-" This alternative version created by TaylanUB
-" Revision 2010-04-03
-"
-" n = Left       ,  i = Right      ,  u = Up    ,  e = Down      
-" N = Left*5     ,  I = Right*5    ,  U = Up*5  ,  E = Down*5    
-" l = Prev word  ,  y = Next word
-" L = Prev WORD  ,  Y = Next WORD
-" j = PageUp     ,  h = PageDown              
-" - = BOF        ,  _ = EOF        ,  <count>- = Goto line
-"
-" You can use Tab in place of Esc, to quit insert mode.
-" Tab also stops search highlighting, in normal mode.
-" Use S-Tab for literal tabs, in insert mode.
-" 
-" Space appends a space in normal mode.
-"
-" s/S is now a/A (Alter)
-" i/I is now s/S (Stick)
-" a/A is now t/T (Tail)
-" t/T is now b/B (Before)
-" y/Y is now c/C (Copy)
-" c/C is now w/W (sWap)
-" n/N is now k/K (seeK)
-" undo/redo is z/Z (Zap)
-" line-Undo is gu  (Great Undo)
-"
-" Use '\' for 'z'
-" Use 'gg' for 'zz'
-" Use 'G' for 'L'
-"
-" inner object is now 'r'
-" e.g. dib is now drb
-"
-" For X clipboard yanking:
-" CC is "+yy
-" Cc is "*yy
-" Cp is "+p
-" CP is "+P
-" cp is "*p
-" cP is "*P
-"
-" In a help file:
-"  <CR>, > = goto tag
-"  <BS>, < = back
-"  S-Space = PageUp
-"    Space = PageDown
-"
+" Q
+nnoremap q q|       " Record macro
+nnoremap Q @q|      " Macros (replay the macro recorded by qq)
 
-" Navigation
-nnoremap n h|xnoremap n h|onoremap n h|
-nnoremap u k|xnoremap u k|onoremap u k|
-nnoremap e j|xnoremap e j|onoremap e j|
-nnoremap i l|xnoremap i l|onoremap i l|
-" Turbo
-nnoremap <silent> N @='5h'<CR>|xnoremap <silent> N @='5h'<CR>|onoremap N 5h|
-nnoremap <silent> U @='5k'<CR>|xnoremap <silent> U @='5k'<CR>|onoremap U 5k|
-nnoremap <silent> E @='5j'<CR>|xnoremap <silent> E @='5j'<CR>|onoremap E 5j|
-nnoremap <silent> I @='5l'<CR>|xnoremap <silent> I @='5l'<CR>|onoremap I 5l|
-" Word/WORD
-nnoremap l b|xnoremap l b|onoremap l b|
-nnoremap y w|xnoremap y w|onoremap y w|
-nnoremap L B|vnoremap L B|onoremap L B|
-nnoremap Y W|vnoremap Y W|onoremap Y W|
-" PageUp/PageDown
-nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
-nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
-xnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
-xnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
-" Jump to line
-nnoremap - gg|xnoremap - gg|onoremap - gg|
-nnoremap _ G|xnoremap _ G|onoremap _ G|
-nnoremap G L|
-" Insert
-nnoremap s i|
-nnoremap S I|
-" Append
-nnoremap t a|
-nnoremap T A|
-" Substitute
-nnoremap a s|
-nnoremap A S|
-" Yank
-nnoremap c y|xnoremap c y|
-nnoremap cc yy|xnoremap cc yy|
-nnoremap C Y|xnoremap C Y|
-" Change
-nnoremap w c|xnoremap w c|
-nnoremap W C|xnoremap W C|
-nnoremap ww cc|xnoremap ww cc|
-" Till
-nnoremap b t|xnoremap b t|onoremap b t|
-nnoremap B T|xnoremap B T|onoremap B T|
-" Search Next/Prev
-nnoremap k n|xnoremap k n|onoremap k n|
-nnoremap K N|xnoremap K N|onoremap K N|
-" Undo/Redo
-nnoremap z u|xnoremap z :<C-u>undo<CR>|
-nnoremap Z <C-r>|xnoremap Z :<C-u>redo<CR>|
-nnoremap gz U|xnoremap gz U<C-u>undo<CR>|
-" Folds
-nnoremap \ z|
-" zz
-nnoremap gg zz|
-" Inner Object
-onoremap r i|
+" W
+nnoremap w "_c|     " Change  
+vnoremap w "_c
+nnoremap W "_C|     " Change until end of line  
+onoremap w iw|      " inner word
+
+" F
+nnoremap f f|       " Find next char on line
+onoremap f f|        
+
+" P
+noremap p ;|        " Repeat last f, t
+noremap P ,
+
+" G
+nnoremap g g|       " Go to
+
+" ----------------------------------------------
+
+" A
+nnoremap a V|       " Visual line mode
+nnoremap A viw|     " Visual mode with word preselected
+
+" R
+nnoremap r r|       " Replace
+
+" S
+nnoremap s i|       " Insert mode
+nnoremap S I|       " Insert at beginning of line
+vnoremap s gS|  " Selection to visual studio selection
+
+" T
+nnoremap t a|       " Append
+nnoremap T A|       " Append to end of line
+
+" D
+nnoremap d d|       " Delete
+
+" ----------------------------------------------
+
+" Z
+nnoremap z u|       " Undo
+nnoremap Z <C-r>|   " Redo   
+nnoremap <C-z> u
+
+" X
+nnoremap x "_x|     " Delete char into black hole  
+vnoremap x <esc>`.``gvP``P|             " Swap selection for deletion
+nnoremap <C-x> "*dd|" Cut into clipboard       
+
+" C
+nnoremap c y|       " Copy
+onoremap c y
+vnoremap c y
+nnoremap C y$
+nnoremap <C-c> "*Y| " Copy into clipboard      
+cnoremap <C-c> <C-y>
+
+" V
+nnoremap v ]p|       " Paste
+nnoremap V [P
+vnoremap v p
+vnoremap V P
+nnoremap <C-v> "*p| " Paste into clipboard      
+inoremap <C-v> <esc>]pa
+cnoremap <C-v> <C-r>
+
+" B
+onoremap B iB|      " By default use inner brace matching
+nnoremap b %|       " Match brace
+onoremap b %
+
+
+" ----------------------------------------------
+" ----------------------------------------------
+
+" J
+nnoremap j :call SwapParams("forwards")<cr>
+vnoremap j <esc>`.``gvP``P|             " Swap selection for deletion
+
+" L
+noremap l b|       " Word left 
+noremap L zk
+nnoremap + zr|     " Open more folds
+
+" U
+nnoremap u k|       " Up 
+vnoremap u k
+nnoremap U 5k|      " 5*Up   
+vnoremap U 5k
+inoremap <c-u> <esc>bgUeea|    " Make last word uppercase
+vnoremap <c-u> U|              " Make uppercase
+
+" Y
+noremap y w|       " Word right 
+noremap Y zj
+vnoremap y e|      " Forward until end of word
+
+" ----------------------------------------------
+
+" H
+nnoremap h za|     " Toggle fold
+nnoremap H zR|     " Turn off all folds
+nnoremap <c-h> zt| " Scroll cursor to top (minus scrolloff)
+
+" N
+nnoremap n h|      " Left  
+vnoremap n h
+noremap N ^|       " Start of line 
+inoremap <C-n> <C-p>| " Word completion
+
+" E
+nnoremap e j|      " Down  
+vnoremap e j
+nnoremap E 5j|     " 5*Down   
+vnoremap E 5j 
+
+" I
+nnoremap i l|      " Right  
+vnoremap i l
+noremap I $|       " End of line 
+
+" Indentation text motion
+omap ii iB
+omap ai aB
+
+" O
+nnoremap o o|      " Open new line  
+
+" '
+
+" ----------------------------------------------
+
+" K
+nnoremap k n|      " Search next  
+nnoremap K N|      " Search prev  
+
+" M
+noremap m /|      " Search
+noremap M ?|      " Search backward  
+nnoremap - zm|     " Close more folds
+
+" ,
+let mapleader = ","
+let g:mapleader = ","
+
+
+" .
+nnoremap . .|      " Repeat command  
+
+" ----------------------------------------------
+" ----------------------------------------------
+
+" Backspace
+inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
+
 " Space
-nnoremap <Space> i<Space><Right><Esc>|
+nnoremap <space> <c-d>|       " Page down
+nnoremap <s-space> <c-u>|     " Page up
+
+" Return
+nnoremap <CR> i<CR><Esc>
+
+" Tab (in insert mode we complete with tab)
+" nnoremap <tab> ==
+" vnoremap <tab> =
 " Escape/Tab
 nnoremap <silent> <Tab> :nohlsearch<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
 inoremap <S-Tab> <Tab>|
-" X clipboard yanking
-nnoremap CC "+yy|
-nnoremap Cc "*yy|
-nnoremap Cp "+p|
-nnoremap CP "+P|
-nnoremap cp "*p|
-nnoremap cP "*P|
-" Help-file navigation
-au FileType help nnoremap <buffer> < <C-t>|
-au FileType help nnoremap <buffer> > <C-]>|
-au FileType help nnoremap <buffer> <CR> <C-]>|
-au FileType help nnoremap <buffer> <Backspace> <C-t>|
-au FileType help nnoremap <buffer> <silent> <expr> <Space> (winheight(0)-1) . "\<C-d>0"|
-au FileType help nnoremap <buffer> <silent> <expr> <S-Space> (winheight(0)-1) . "\<C-u>0"|
-
