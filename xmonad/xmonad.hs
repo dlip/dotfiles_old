@@ -76,21 +76,24 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- C
     -- V
     -- B
+    -----------------------------
     -- J
     -- L
-    , ((modMask,               xK_l     ), sendMessage Shrink) -- Shrink the master area 
+    , ((modMask,               xK_l     ), windows W.swapUp    ) -- Swap the focused window with the previous window
     -- U
     , ((modMask,               xK_u     ), windows W.focusUp  ) -- Move focus to the previous window
     -- Y
-    , ((modMask,               xK_y     ), sendMessage Expand) -- Expand the master area
+    , ((modMask,               xK_y     ), windows W.swapDown  ) -- Swap the focused window with the next window 
     -- H
-    , ((modMask,               xK_i     ), windows W.swapDown  ) -- Swap the focused window with the next window 
+    , ((modMask,               xK_h     ), sendMessage Shrink) -- Shrink the master area 
     -- N
+    , ((modMask,               xK_n     ), prevWS    ) -- Swap the focused window with the previous window
     -- E
     , ((modMask,               xK_e     ), windows W.focusDown) -- Move focus to the next window
     -- I
-    , ((modMask,               xK_n     ), windows W.swapUp    ) -- Swap the focused window with the previous window
+    , ((modMask,               xK_i     ), nextWS    ) -- Swap the focused window with the previous window
     -- O
+    , ((modMask,               xK_o     ), sendMessage Expand) -- Expand the master area
     -- K
     , ((modMask,               xK_k     ), kill) -- close focused window 
     -- M
@@ -102,9 +105,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     ]
 
     {-
-    -- launch a terminal
-    , ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-
     -- launch dmenu
     , ((modMask,               xK_l     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
 
@@ -116,10 +116,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- Resize viewed windows to the correct size
     , ((modMask,               xK_slash ), refresh)
-
-    -- Move focus to the next window
-    , ((modMask,               xK_Tab   ), windows W.focusDown)
-
 
     -- Move focus to the master window
     , ((modMask,               xK_m     ), windows W.focusMaster  )
