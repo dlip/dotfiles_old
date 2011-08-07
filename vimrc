@@ -41,6 +41,13 @@ set noswapfile
 let mapleader = ","
 let g:mapleader = ","
 
+if has("gui_running")
+  set guioptions+=LlRrb
+  set guioptions-=LlRrb
+  set guioptions-=T
+  set guioptions-=m
+  set t_Co=256
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key Bindings
@@ -201,6 +208,8 @@ nnoremap o o|      " Open new line
 " K
 nnoremap k n|      " Search next  
 nnoremap K N|      " Search prev  
+vnoremap k n|      " Search next  
+vnoremap K N|      " Search prev  
 
 " M
 noremap m /|      " Search
@@ -255,11 +264,6 @@ elseif has('unix')
 endif
 
 if has("gui_running")
-  set guioptions+=LlRrb
-  set guioptions-=LlRrb
-  set guioptions-=T
-  set guioptions-=m
-  set t_Co=256
   set background=dark
   colorscheme molokai
 else
