@@ -38,8 +38,8 @@ set nobackup
 set nowb
 set noswapfile
 
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\<space>"
+let g:mapleader = "\<space>"
 
 if has("gui_running")
   set guioptions+=LlRrb
@@ -107,14 +107,14 @@ nnoremap <C-z> u
 " X
 nnoremap x "_x|     " Delete char into black hole  
 vnoremap x <esc>`.``gvP``P|             " Swap selection for deletion
-nnoremap <C-x> "*dd|" Cut into clipboard       
+nnoremap <C-x> "+dd|" Cut into clipboard       
 
 " C
 nnoremap c y|       " Copy
 onoremap c y
 vnoremap c y
 nnoremap C y$
-nnoremap <C-c> "*Y| " Copy into clipboard      
+nnoremap <C-c> "+Y| " Copy into clipboard      
 cnoremap <C-c> <C-y>
 
 " V
@@ -122,7 +122,7 @@ nnoremap v ]p|       " Paste
 nnoremap V [P
 vnoremap v p
 vnoremap V P
-nnoremap <C-v> "*p| " Paste into clipboard      
+nnoremap <C-v> "+p| " Paste into clipboard      
 inoremap <C-v> <esc>]pa
 cnoremap <C-v> <C-r>
 
@@ -212,12 +212,10 @@ vnoremap k n|      " Search next
 vnoremap K N|      " Search prev  
 
 " M
-noremap m /|      " Search
-noremap M ?|      " Search backward  
+nnoremap m m|      " Create mark
 nnoremap - zm|     " Close more folds
 
 " ,
-nmap <silent> <leader><leader> <C-^>| "Easily switch between this and last buffer
 
 " .
 nnoremap . .|      " Repeat command  
@@ -231,10 +229,6 @@ nmap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 " Backspace
 inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
 
-" Space
-nnoremap <space> <c-d>|       " Page down
-nnoremap <s-space> <c-u>|     " Page up
-
 " Return
 nnoremap <CR> i<CR><Esc>
 
@@ -247,6 +241,8 @@ vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
 inoremap <S-Tab> <Tab>|
 
+" Leader
+nmap <silent> <leader><leader> <C-^>| "Easily switch between this and last buffer
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
