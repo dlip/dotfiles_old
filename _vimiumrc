@@ -1,4 +1,6 @@
 " Vimium configuration using Colemak
+" Not autoloaded, you need to paste in chrome options
+" Link hints esntiroahd
 unmapAll
 
 " Navigation
@@ -8,6 +10,11 @@ map n scrollLeft
 map i scrollRight
 map E scrollPageDown
 map U scrollPageUp
+map r reload
+map f linkHints.activateMode
+map F linkHints.activateModeToOpenInNewTab
+map b activateBookmarkFindMode
+map B activateBookmarkFindModeToOpenInNewTab
 
 " Using Find
 map / enterFindMode
@@ -18,7 +25,12 @@ map K performBackwardsFind
 map N goBack
 map I goForward
 
-
 " Manipulating tabs
 map y nextTab
 map l previousTab
+map t createTab
+map x removeTab
+map z restoreTab
+
+" Miscellaneous
+map ? showHelp
