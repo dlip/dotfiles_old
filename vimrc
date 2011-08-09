@@ -272,6 +272,9 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "NerdTree Options
 let g:NERDTreeQuitOnOpen = 1
+let NERDTreeMapOpenExpl='' "Normally e
+let NERDTreeMapUpdir='' "Normally u
+let NERDTreeMapOpenSplit='' "Normally i
 
 "Move wiki folder on windows
 if has('win32')
