@@ -2,9 +2,13 @@ import XMonad
 import XMonad.Config.Gnome
 import XMonad.Layout.NoBorders
 import XMonad.Util.EZConfig (additionalKeysP)
-import XMonad.Actions.CycleWS (nextWS, prevWS)
+import XMonad.Actions.CycleWS
+
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
+import System.IO
+import System.Exit
 
 
 -- The preferred terminal program, which is used in a binding below and by
@@ -62,12 +66,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- Q
     [ ((modMask              , xK_q     ), restart "xmonad" True) -- Restart xmonad
+    -- Quit xmonad
+    , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- W
     -- F
     -- P
     -- G
     -- A
     -- R
+    , ((modMask,               xK_r     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"") -- launch dmenu
     -- S
     -- T
     -- D
@@ -97,16 +104,17 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- K
     , ((modMask,               xK_k     ), kill) -- close focused window 
     -- M
+    , ((modMask,               xK_m     ), nextScreen    ) -- Go to next screen
+    , ((modMask .|. shiftMask,    xK_m    ), shiftNextScreen >> nextScreen   ) -- Move to next screen then go to it
     -- Space
     , ((modMask,               xK_space ), sendMessage NextLayout) -- Rotate through the available layout algorithms
     -- Return
     , ((modMask,               xK_Return), spawn $ XMonad.terminal conf)
 
+    -- Tab
     ]
 
     {-
-    -- launch dmenu
-    , ((modMask,               xK_l     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
 
     -- launch gmrun
     , ((modMask .|. shiftMask, xK_l     ), spawn "gmrun")
@@ -136,8 +144,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- TODO, update this binding with avoidStruts
     ----, ((modMask              , xK_apostrophe )),
 
-    -- Quit xmonad
-    , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
 -}
     ++
@@ -149,17 +155,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-{-
     ++
 
     --
-    -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
-    -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+    -- mod-{w,f,p}, Switch to physical/Xinerama screens 1, 2, or 3
+    -- mod-shift-{w,f,p}, Move client to screen 1, 2, or 3
     --
     [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_u, xK_y, xK_semicolon] [0..]
+        | (key, sc) <- zip [xK_w, xK_f, xK_p] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
--}
 
 
 
@@ -257,8 +261,6 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = return ()
 
--- main = xmonad $ myConfig `additionalKeysP` myKeys
-
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
@@ -272,7 +274,7 @@ main = xmonad defaults
 -- 
 -- No need to modify this.
 --
-defaults = gnomeConfig {
+defaults = defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -288,7 +290,7 @@ defaults = gnomeConfig {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = smartBorders (layoutHook gnomeConfig),
+        layoutHook         = myLayout,
         manageHook         = myManageHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
