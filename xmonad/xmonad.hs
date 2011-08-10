@@ -77,6 +77,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_r     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"") -- launch dmenu
     -- S
     -- T
+    , ((modMask,               xK_t     ), spawn "gmrun") -- launch gmrun
     -- D
     -- Z
     -- X
@@ -116,8 +117,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     {-
 
-    -- launch gmrun
-    , ((modMask .|. shiftMask, xK_l     ), spawn "gmrun")
 
     --  Reset the layouts on the current workspace to default
     , ((modMask .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
