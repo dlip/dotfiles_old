@@ -100,7 +100,6 @@ nnoremap d d|       " Delete
 " Z
 nnoremap z u|       " Undo
 nnoremap Z <C-r>|   " Redo   
-nnoremap <C-z> u
 
 " X
 nnoremap x "_x|     " Delete char into black hole  
