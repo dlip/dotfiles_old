@@ -1,8 +1,6 @@
 [user]
 	name = Dane Lipscombe
-	email = dane@lipscobme.com.au
-
-[diff]
+	email = dlipscombe@baselinesolutions.com.au
 [color]
     ui = auto
 [alias]
@@ -26,11 +24,17 @@
     gnc = goodness --cached
     fa = fetch --all
     pom = push origin master
+    d = difftool
 
 [format]
     pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
 [merge]
-    tool = vimdiff
+	tool = vimdiff3
 
-
+[mergetool "vimdiff3"]
+	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
