@@ -25,6 +25,7 @@
     fa = fetch --all
     pom = push origin master
     d = difftool
+    dangle = !git fsck --lost-found | grep commit | cut -d\" \" -f3 | xargs -L1 git log -n1
 
 [format]
     pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset

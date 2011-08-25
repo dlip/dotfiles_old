@@ -28,3 +28,6 @@
 [submodule "vim/bundle/xptemplate"]
 	path = vim/bundle/xptemplate
 	url = http://github.com/drmingdrmer/xptemplate.git
+[submodule "vim/bundle/unimpared"]
+	path = vim/bundle/unimpared
+	url = http://github.com/tpope/vim-unimpaired.git

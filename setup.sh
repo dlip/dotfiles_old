@@ -9,6 +9,7 @@ dotfiles=(
   "Xmodmap" 
   "gitconfig" 
   "inputrc" 
+  "moc"
 )
 
 for f in "${dotfiles[@]}"

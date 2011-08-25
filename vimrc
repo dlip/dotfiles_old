@@ -227,7 +227,7 @@ nmap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
 
 " Return
-nnoremap <CR> i<CR><Esc>
+" nnoremap <CR> i<CR><Esc>
 
 " Tab (in insert mode we complete with tab)
 " nnoremap <tab> ==
