@@ -77,8 +77,9 @@ nmap <silent> <leader>gs :Gstatus<cr>
 " ----------------------------------------------
 
 " A
-nnoremap a V|       " Visual line mode
-nnoremap A viw|     " Visual mode with word preselected
+nnoremap a v|     " Visual mode
+nnoremap A V|       " Visual line mode
+nnoremap ar viw|     " Visual mode with word preselected
 
 " R
 nnoremap r r|       " Replace
