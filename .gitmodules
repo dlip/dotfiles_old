@@ -31,3 +31,6 @@
 [submodule "vim/bundle/unimpared"]
 	path = vim/bundle/unimpared
 	url = http://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/dbgpclient"]
+	path = vim/bundle/dbgpclient
+	url = http://github.com/garyaj/vim-dbgpclient.git
