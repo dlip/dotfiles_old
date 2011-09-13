@@ -1,0 +1,8 @@
+!make right alt control
+remove mod1 = Alt_R
+keycode 108 = Control_R
+add control = Control_R
+
+!remap caps lock to backspace
+!remove Lock = Caps_Lock
+!keycode 66 = BackSpace
