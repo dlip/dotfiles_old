@@ -31,3 +31,6 @@
 [submodule "vim/bundle/dbgpclient"]
 	path = vim/bundle/dbgpclient
 	url = http://github.com/garyaj/vim-dbgpclient.git
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = http://github.com/tpope/vim-commentary.git
