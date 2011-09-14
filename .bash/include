@@ -1,5 +1,5 @@
 # add git completion
-. ~/dotfiles/bash/git-completion.bash
+. ~/.bash/git-completion.bash
 
 # add git completion
-. ~/dotfiles/bash/vi-bindings.bash
+. ~/.bash/vi-bindings.bash
