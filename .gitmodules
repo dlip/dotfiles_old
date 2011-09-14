@@ -1,36 +1,36 @@
-[submodule "vim/bundle/fugitive"]
+[submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/commandt"]
+[submodule ".vim/bundle/commandt"]
 	path = .vim/bundle/commandt
 	url = http://github.com/vim-scripts/Command-T.git
-[submodule "vim/bundle/colors-solarized"]
+[submodule ".vim/bundle/colors-solarized"]
 	path = .vim/bundle/colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/colors-vividchalk"]
+[submodule ".vim/bundle/colors-vividchalk"]
 	path = .vim/bundle/colors-vividchalk
 	url = http://github.com/tpope/vim-vividchalk.git
-[submodule "vim/bundle/coffee-script"]
+[submodule ".vim/bundle/coffee-script"]
 	path = .vim/bundle/coffee-script
 	url = http://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/bundle/nerdtree"]
+[submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/coffee-snippets/snippets"]
+[submodule ".vim/bundle/coffee-snippets/snippets"]
 	path = .vim/bundle/coffee-snippets/snippets
 	url = http://github.com/sdiehl/coffee-snippets.git
-[submodule "vim/bundle/vimwiki"]
+[submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = http://github.com/vim-scripts/vimwiki.git
-[submodule "vim/bundle/xptemplate"]
+[submodule ".vim/bundle/xptemplate"]
 	path = .vim/bundle/xptemplate
 	url = http://github.com/drmingdrmer/xptemplate.git
-[submodule "vim/bundle/unimpared"]
+[submodule ".vim/bundle/unimpared"]
 	path = .vim/bundle/unimpared
 	url = http://github.com/tpope/vim-unimpaired.git
-[submodule "vim/bundle/dbgpclient"]
+[submodule ".vim/bundle/dbgpclient"]
 	path = .vim/bundle/dbgpclient
 	url = http://github.com/garyaj/vim-dbgpclient.git
-[submodule "vim/bundle/vim-commentary"]
+[submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git

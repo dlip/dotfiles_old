@@ -1,11 +1,10 @@
-*
-!/*/
+/*
 
-!/bin/*
-!/configs/*
-!/.bash/*
-!/.moc/*
-!/.vim/*
+!/bin
+!/configs
+!/.bash
+!/.moc
+!/.vim
 
 !/.xmonad/xmonad.hs
 
