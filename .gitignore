@@ -1,3 +1,15 @@
 *
 !*/
-!.xmonad/xmonad.hs
+!/bin
+!/configs
+!/.bash
+!/.moc
+!/.vim
+!/.xmonad/xmonad.hs
+!/.bash_profile
+!/.bashrc
+!/.gitconfig
+!/.gitmodules
+!/.inputrc
+!/.vimrc
+!/.Xmodmap
