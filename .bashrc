@@ -1,4 +1,6 @@
 . ~/.bash/env
 . ~/.bash/config
 . ~/.bash/aliases
-. ~/.bash/include
+for file in ~/.bash/include/*.bash; do
+    source "$file"
+done
