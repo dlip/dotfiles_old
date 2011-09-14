@@ -7,3 +7,5 @@ done
 . ~/.bash/env
 . ~/.bash/config
 . ~/.bash/aliases
+
+lesskey
