@@ -200,6 +200,7 @@ omap ai aB
 nnoremap o o|      " Open new line  
 
 " '
+nnoremap ' `
 
 " ----------------------------------------------
 
@@ -238,6 +239,9 @@ nnoremap <silent> <Tab> :nohlsearch<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
 inoremap <S-Tab> <Tab>|
+
+" `
+nnoremap ` '
 
 " Leader
 nmap <silent> <leader><leader> <C-^>| "Easily switch between this and last buffer
