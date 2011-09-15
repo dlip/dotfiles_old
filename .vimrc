@@ -150,7 +150,7 @@ nnoremap U 5k|      " 5*Up
 vnoremap U 5k
 inoremap <c-u> <esc>bgUeea|    " Make last word uppercase
 vnoremap <c-u> U|              " Make uppercase
-nnoremap <C-u> <C-W>k|    " Move to split above
+nnoremap <leader>u <C-W>k|    " Move to split above
 
 " Y
 noremap y w|       " Word right 
@@ -171,26 +171,26 @@ nnoremap n h|      " Left
 vnoremap n h
 noremap N ^|       " Start of line 
 inoremap <C-n> <C-p>| " Word completion
-nnoremap <C-n> <C-W>h| " move to split left (not working)
+nnoremap <leader>n <C-W>h| " move to split left
 
 " E
 nnoremap e j|      " Down  
 vnoremap e j
 nnoremap E 5j|     " 5*Down   
 vnoremap E 5j 
-nnoremap <C-e> <C-W>j|   " Move to split below
+nnoremap <leader>e <C-W>j|   " Move to split below
 " Fast editing of the .vimrc
 if has('unix')
-  map <leader>e :e! ~/.vimrc<cr>
+  map <leader>v :e! ~/.vimrc<cr>
 elseif has('win32')
-  map <leader>e :e! ~/_vimrc<cr>
+  map <leader>v :e! ~/_vimrc<cr>
 endif  
 
 " I
 nnoremap i l|      " Right  
 vnoremap i l
 noremap I $|       " End of line 
-noremap <C-i> <C-W>l|   " Move to split right (not working)
+noremap <leader>i <C-W>l|   " Move to split right (not working)
 
 " Indentation text motion
 omap ii iB
