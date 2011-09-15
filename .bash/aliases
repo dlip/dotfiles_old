@@ -4,6 +4,7 @@
 alias reload='source ~/.bashrc'
 alias ea='vim ~/.bash/aliases && reload' # Edit aliases
 alias ee="vim ~/.bash/env"
+alias v="vim"
 
 # Quicker cd
 alias cg='cd /Library/Ruby/Gems/1.8/gems/'
