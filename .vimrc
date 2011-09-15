@@ -289,6 +289,11 @@ if has('win32')
   let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
 endif  
 
+"Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
