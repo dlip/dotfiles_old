@@ -94,6 +94,7 @@ nnoremap r r|       " Replace
 nnoremap s i|       " Insert mode
 nnoremap S I|       " Insert at beginning of line
 vnoremap s gS|  " Selection to visual studio selection
+nnoremap <silent> <leader>s :TagbarToggle<cr>
 
 " T
 nnoremap t a|       " Append
@@ -293,6 +294,10 @@ endif
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
+
+"Tagbar
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto Commands
