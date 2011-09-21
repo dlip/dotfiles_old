@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/easytags"]
 	path = .vim/bundle/easytags
 	url = http://github.com/xolox/vim-easytags.git
+[submodule ".vim/bundle/mru"]
+	path = .vim/bundle/mru
+	url = http://github.com/vim-scripts/mru.vim.git
