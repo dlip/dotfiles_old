@@ -11,6 +11,7 @@
 !/.ackrc
 !/.bash_profile
 !/.bashrc
+!/.ctags
 !/.gitconfig
 !/.gitignore
 !/.gitmodules

@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/easymotion"]
 	path = .vim/bundle/easymotion
 	url = http://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/easytags"]
+	path = .vim/bundle/easytags
+	url = http://github.com/xolox/vim-easytags.git
