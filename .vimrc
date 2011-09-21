@@ -100,6 +100,7 @@ nnoremap <silent> <leader>s :TagbarToggle<cr>
 " T
 nnoremap t a|       " Append
 nnoremap T A|       " Append to end of line
+inoremap <C-t> <esc>
 
 " D
 nnoremap d d|       " Delete
@@ -243,10 +244,10 @@ inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
 " nnoremap <tab> ==
 " vnoremap <tab> =
 " Escape/Tab
-nnoremap <silent> <Tab> :nohlsearch<CR>|
-vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
-inoremap <Tab> <Esc>|
-inoremap <S-Tab> <Tab>|
+nnoremap <silent> <Esc> :nohlsearch<CR>|
+" vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
+" inoremap <Tab> <Esc>|
+" inoremap <S-Tab> <Tab>|
 
 " `
 nnoremap ` '
