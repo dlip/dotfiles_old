@@ -69,6 +69,7 @@ onoremap w iw|      " inner word
 " F
 nnoremap f f|       " Find next char on line
 onoremap f f|        
+let g:EasyMotion_leader_key = '<Leader>f'
 
 " P
 noremap p ;|        " Repeat last f, t
@@ -298,6 +299,7 @@ let g:syntastic_auto_loc_list=1
 "Tagbar
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto Commands

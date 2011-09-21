@@ -49,3 +49,6 @@
 [submodule "bin/drushdist"]
 	path = bin/drushdist
 	url = http://git.drupal.org/project/drush.git
+[submodule ".vim/bundle/easymotion"]
+	path = .vim/bundle/easymotion
+	url = http://github.com/Lokaltog/vim-easymotion.git
