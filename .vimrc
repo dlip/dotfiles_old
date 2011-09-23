@@ -1,3 +1,5 @@
+set runtimepath=~/.vim,$VIMRUNTIME "Make windows use same path as unix
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Pathogen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -54,7 +56,7 @@ set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key Bindings
+" => Colemak Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Q
 nnoremap q q|       " Record macro
@@ -101,6 +103,7 @@ nnoremap <silent> <leader>s :TagbarToggle<cr>
 nnoremap t a|       " Append
 nnoremap T A|       " Append to end of line
 inoremap <C-t> <esc>
+vnoremap <C-t> <esc>
 
 " D
 nnoremap d d|       " Delete
@@ -127,11 +130,12 @@ cnoremap <C-c> <C-y>
 " V
 nnoremap v ]p|       " Paste
 nnoremap V [P
-vnoremap v p
+vnoremap v <esc>o<esc>pgvpmvj^d$J`v| " Paste without yank
 vnoremap V P
 nnoremap <C-v> "+p| " Paste into clipboard      
 inoremap <C-v> <esc>]pa
 cnoremap <C-v> <C-r>
+nnoremap <leader>v :e! ~/.vimrc<cr>| " Fast editing of the .vimrc
 
 " B
 onoremap B iB|      " By default use inner brace matching
@@ -188,12 +192,6 @@ vnoremap e j
 nnoremap E 5j|     " 5*Down   
 vnoremap E 5j 
 nnoremap <leader>e <C-W>j|   " Move to split below
-" Fast editing of the .vimrc
-if has('unix')
-  map <leader>v :e! ~/.vimrc<cr>
-elseif has('win32')
-  map <leader>v :e! ~/_vimrc<cr>
-endif  
 
 " I
 nnoremap i l|      " Right  
@@ -251,6 +249,14 @@ nnoremap <silent> <Esc> :nohlsearch<CR>|
 
 " `
 nnoremap ` '
+
+";
+nnoremap ; :
+vnoremap ; :
+
+":
+nnoremap : ;
+vnoremap : ;
 
 " Leader
 nmap <silent> <leader><leader> <C-^>| "Easily switch between this and last buffer
