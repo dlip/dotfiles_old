@@ -105,9 +105,9 @@ nnoremap <C-c> "*Y
 cnoremap <C-c> <C-y>
 
 " V
-nnoremap v ]p
-nnoremap V [P
-vnoremap v "_dP| " Paste without yank
+nnoremap v p
+nnoremap V P
+vnoremap v "_dP
 vnoremap V P
 nnoremap <C-v> "*p
 inoremap <C-v> <esc>]pa
