@@ -130,7 +130,7 @@ cnoremap <C-c> <C-y>
 " V
 nnoremap v ]p|       " Paste
 nnoremap V [P
-vnoremap v <esc>o<esc>pgvpmvj^d$J`v| " Paste without yank
+vnoremap v pmvgvy`v| " Paste without yank
 vnoremap V P
 nnoremap <C-v> "+p| " Paste into clipboard      
 inoremap <C-v> <esc>]pa
