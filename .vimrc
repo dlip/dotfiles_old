@@ -104,6 +104,7 @@ nnoremap t a|       " Append
 nnoremap T A|       " Append to end of line
 inoremap <C-t> <esc>
 vnoremap <C-t> <esc>
+nnoremap <silent> <C-t> :nohlsearch<CR>|
 
 " D
 nnoremap d d|       " Delete
@@ -234,18 +235,6 @@ nmap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 
 " Backspace
 inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
-
-" Return
-" nnoremap <CR> i<CR><Esc>
-
-" Tab (in insert mode we complete with tab)
-" nnoremap <tab> ==
-" vnoremap <tab> =
-" Escape/Tab
-nnoremap <silent> <Esc> :nohlsearch<CR>|
-" vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
-" inoremap <Tab> <Esc>|
-" inoremap <S-Tab> <Tab>|
 
 " `
 nnoremap ` '

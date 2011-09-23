@@ -1,133 +1,223 @@
-set incsearch
-set ignorecase
-set hlsearch
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM Options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on           " Enable syntax highlighting
+set so=7            " Set 7 lines to the curors - when moving vertical..
+set history=300     " Sets how many lines of history VIM has to remember
+set nocompatible    " new vim mode
+set autoread        " Set to auto read when a file is changed from the outside
+set wildmenu        " Turn on WiLd menu
+set wildmode=list:longest,full
+set ruler           " Always show current position
+set cmdheight=2     " The commandbar height
+set ignorecase      " Ignore case when searching
+set hlsearch        " Highlight search things
+set hid             " Change buffer - without saving
+set incsearch       " Make search act like search in modern browsers
+set magic           " Set magic on, for regular expressions
+set showmatch       " Show matching bracets when text indicator is over them
+set mat=1           " How many tenths of a second to blink
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set autoindent
+set expandtab
+set backspace=indent,eol,start
 
-" Up/down/left/right
-nnoremap n h
-xnoremap n h
-onoremap n h
-nnoremap u k
-xnoremap u k
-onoremap u k
+" Turn backup off, since most stuff is in SVN, git anyway...
+set nobackup
+set nowb
+set noswapfile
 
-nnoremap e j
-xnoremap e j
-onoremap e j
+let mapleader = ","
+let g:mapleader = ","
 
-nnoremap i l
-xnoremap i l
-onoremap i l
-
-" Home/end of line
-" 0 unchanged
-nnoremap L ^
-xnoremap L ^
-onoremap L ^
-
-nnoremap Y $
-xnoremap Y $
-onoremap Y $
-
-cnoremap <M-j> <PageUp>|
-cnoremap <M-h> <PageDown>|
-
-" Words forwards/backwards
-nnoremap l b
-xnoremap l b
-onoremap l b
-
-nnoremap y w
-xnoremap y w
-onoremap y w
-
-" inneR text objects
-" e.g. dip (delete inner paragraph) is now drp
-onoremap r i
-
-" Map ; to :
-nnoremap ; :
-xnoremap ; :
-
-" Cut/copy/paste
-nnoremap x x
-xnoremap x d
-nnoremap c y
-xnoremap c y
-nnoremap v gP
-xnoremap v gP
-nnoremap X dd
-xnoremap X d
-nnoremap C yy
-xnoremap C y
-nnoremap V p
-xnoremap V p
-
-" Undo/redo
-nnoremap z u
-xnoremap z :<C-u>undo<CR>
-
-" inSert/Replace/append (T)
-nnoremap s i
-nnoremap S I
-nnoremap t a
-nnoremap T A
-
-" Change
-nnoremap w c
-xnoremap w c
-nnoremap W C
-xnoremap W C
-nnoremap ww cc
-
-" Visual mode
-nnoremap a v
-xnoremap a v
-nnoremap A V
-xnoremap A V
-
-" Search
-" f unchanged
-" F unchanged
-nnoremap p t
-xnoremap p t
-onoremap p t
-nnoremap P T
-xnoremap P T
-onoremap P T
-nnoremap b ;
-xnoremap b ;
-onoremap b ;
-nnoremap B ,
-xnoremap B ,
-onoremap B ,
-nnoremap k n
-xnoremap k n
-onoremap k n
-nnoremap K N
-xnoremap K N
-onoremap K N
-
-" Macros (replay the macro recorded by qq)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Key Bindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Q
+nnoremap q q
 nnoremap Q @q
 
-" Insert space in normal mode
-nnoremap <Space> i<Space><Esc><Right>
+" W
+nnoremap w "_c
+vnoremap w "_c
+nnoremap W "_C
+onoremap w iw
 
-" Enter, open line
-nnoremap <CR> i<CR><Esc>
+" F
+nnoremap f f
+onoremap f f
 
-" Delete/Backspace
-nnoremap <C-d> "_dw
-vnoremap <C-d> "_d
-inoremap <C-d> <Delete>
-cnoremap <C-d> <Delete>
-nnoremap <Delete> "_x
-vnoremap <Delete> "_d
-nnoremap <Backspace> a<Left><Backspace><Right><Esc>
-vnoremap <Backspace> "_d
+" P
+noremap p ;
+noremap P ,
 
-" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
-" To minimize Tab use, you can use '<', '>' and ':set autoindent'
-nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
-vnoremap <Tab> <Esc><Nul>
-inoremap <Tab> <Esc>
+" G
+nnoremap g g
+"Git commands
+nmap <silent> <leader>gl :silent Git log --graph --abbrev-commit --date=relative<cr>
+nmap <silent> <leader>gs :Gstatus<cr>
+
+" ----------------------------------------------
+
+" A
+nnoremap a v|
+nnoremap A V|
+nnoremap ar viw|
+
+" R
+nnoremap r r
+
+" S
+nnoremap s i
+nnoremap S I
+vnoremap s gS
+
+" T
+nnoremap t a
+nnoremap T A
+inoremap <C-t> <esc>
+vnoremap <C-t> <esc>
+nnoremap <silent> <C-t> :nohlsearch<CR>|
+
+" D
+nnoremap d d
+
+" ----------------------------------------------
+
+" Z
+nnoremap z u
+nnoremap Z <C-r>
+nnoremap <C-z> u
+
+" X
+nnoremap x "_x
+vnoremap x <esc>`.``gvP``P
+nnoremap <C-x> "*dd
+
+" C
+nnoremap c y
+onoremap c y
+vnoremap c y
+nnoremap C y$
+nnoremap <C-c> "*Y
+cnoremap <C-c> <C-y>
+
+" V
+nnoremap v ]p
+nnoremap V [P
+vnoremap v "_dP| " Paste without yank
+vnoremap V P
+nnoremap <C-v> "*p
+inoremap <C-v> <esc>]pa
+cnoremap <C-v> <C-r>
+
+" B
+onoremap B iB
+nnoremap b %
+onoremap b %
+
+
+" ----------------------------------------------
+" ----------------------------------------------
+
+" J
+nnoremap j :call SwapParams("forwards")<cr>
+vnoremap j <esc>`.``gvP``P
+
+" L
+noremap l b
+noremap L zk
+nnoremap + zr
+nmap <leader>l :Calendar<cr>
+
+" U
+nnoremap u k
+vnoremap u k
+nnoremap U 5k
+vnoremap U 5k
+inoremap <c-u> <esc>bgUeea
+vnoremap <c-u> U
+nnoremap <C-u> <C-W>k
+
+" Y
+noremap y w
+noremap Y zj
+vnoremap y e
+noremap <leader>y :YRShow<cr>
+
+" ----------------------------------------------
+
+" H
+nnoremap h za
+nnoremap H zR
+
+nnoremap <c-h> zt
+
+" N
+nnoremap n h
+vnoremap n h
+noremap N ^
+inoremap <C-n> <C-p>
+nnoremap <C-n> <C-W>h
+
+" E
+nnoremap e j
+vnoremap e j
+nnoremap E 5j
+vnoremap E 5j 
+nnoremap <C-e> <C-W>j
+
+" I
+nnoremap i l
+vnoremap i l
+noremap I $
+noremap <C-i> <C-W>l
+
+" Indentation text motion
+omap ii iB
+omap ai aB
+
+" O
+nnoremap o o
+
+" '
+
+" ----------------------------------------------
+
+" K
+nnoremap k n
+nnoremap K N
+vnoremap k n
+vnoremap K N
+
+" M
+noremap m /
+noremap M ?
+nnoremap - zm
+
+" ,
+nmap <silent> <leader><leader> <C-^>
+
+" .
+nnoremap . .
+
+" /
+
+" ----------------------------------------------
+" ----------------------------------------------
+
+" Backspace
+inoremap <C-BS> <C-w>
+
+" `
+nnoremap ` '
+
+";
+nnoremap ; :
+vnoremap ; :
+
+":
+nnoremap : ;
+vnoremap : ;
