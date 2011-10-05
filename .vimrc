@@ -184,8 +184,9 @@ nnoremap <c-h> zt| " Scroll cursor to top (minus scrolloff)
 nnoremap n h|      " Left  
 vnoremap n h
 noremap N ^|       " Start of line 
-inoremap <C-n> <C-p>| " Word completion
+" inoremap <C-n> <C-p>| " Word completion
 nnoremap <leader>n <C-W>h| " move to split left
+inoremap <C-n> <bs>| "Comfortable backspace
 
 " E
 nnoremap e j|      " Down  
@@ -193,6 +194,7 @@ vnoremap e j
 nnoremap E 5j|     " 5*Down   
 vnoremap E 5j 
 nnoremap <leader>e <C-W>j|   " Move to split below
+inoremap <C-e> <cr>| "Comfortable enter
 
 " I
 nnoremap i l|      " Right  

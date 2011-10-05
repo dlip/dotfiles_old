@@ -55,9 +55,6 @@ noremap P ,
 
 " G
 nnoremap g g
-"Git commands
-nmap <silent> <leader>gl :silent Git log --graph --abbrev-commit --date=relative<cr>
-nmap <silent> <leader>gs :Gstatus<cr>
 
 " ----------------------------------------------
 
@@ -159,8 +156,9 @@ nnoremap <c-h> zt
 nnoremap n h
 vnoremap n h
 noremap N ^
-inoremap <C-n> <C-p>
+" inoremap <C-n> <C-p>
 nnoremap <C-n> <C-W>h
+inoremap <C-n> <bs>
 
 " E
 nnoremap e j
@@ -168,6 +166,8 @@ vnoremap e j
 nnoremap E 5j
 vnoremap E 5j 
 nnoremap <C-e> <C-W>j
+inoremap <C-e> <cr>
+inoremap <C-p> <cr>
 
 " I
 nnoremap i l
@@ -193,8 +193,7 @@ vnoremap k n
 vnoremap K N
 
 " M
-noremap m /
-noremap M ?
+noremap m m
 nnoremap - zm
 
 " ,
