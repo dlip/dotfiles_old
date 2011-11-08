@@ -50,6 +50,8 @@ vnoremap s gS
 nnoremap t a
 nnoremap T A
 inoremap <C-t> <C-[>
+vnoremap <C-t> <C-[>
+nnoremap <C-t> :nohlsearch<CR>
 
 " D
 nnoremap d d
@@ -180,12 +182,19 @@ nnoremap [[ :GotoPreviousMember<CR>
 " Return
 " nnoremap <CR> i<CR><Esc>
 
-" Tab (in insert mode we complete with tab)
-
-" Escape/Tab
+" Tab
+inoremap <tab> <esc>
+vnoremap <tab> <esc>
+nnoremap <tab> :noh<cr>
 
 " `
 nnoremap ` '
+
+" ;
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

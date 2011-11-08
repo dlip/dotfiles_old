@@ -238,6 +238,11 @@ nmap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 " Backspace
 inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
 
+" Tab
+inoremap <tab> <esc>
+vnoremap <tab> <esc>
+nnoremap <silent> <tab> :noh<cr>
+
 " `
 nnoremap ` '
 
