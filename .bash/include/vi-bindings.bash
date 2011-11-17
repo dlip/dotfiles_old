@@ -18,6 +18,21 @@
 # to switch to emacs editing mode
  bind -m vi-command '"ZZ": emacs-editing-mode'
 
+#colemak
+ bind -m vi-command '"n": backward-char'
+ bind -m vi-command '"i": forward-char'
+ bind -m vi-command '"u": previous-history'
+ bind -m vi-command '"e": next-history'
+
+ bind -m vi-command 't: vi-append-mode'
+ bind -m vi-command 's: vi-insertion-mode'
+
+ bind -m vi-command 'l: vi-bword'
+ bind -m vi-command 'y: vi-fword'
+
+ bind -m vi-command '"dl": "db"'
+ bind -m vi-command '"dy": "dW"'
+
 ## Insert-mode bindings
 # up arrow or PgUp: append to previous history line
  bind -m vi-insert '"\M-[A": ""'
