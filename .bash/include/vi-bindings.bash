@@ -12,9 +12,9 @@
 
 ## Command-mode bindings
 # Ctrl-A or Home: insert at line beginning like in emacs mode
- bind -m vi-command 'Control-a: vi-insert-beg'
+ bind -m vi-command 'S: vi-insert-beg'
 # Ctrl-E or End: append at line end like in emacs mode
- bind -m vi-command 'Control-e: vi-append-eol'
+ bind -m vi-command 'T: vi-append-eol'
 # to switch to emacs editing mode
  bind -m vi-command '"ZZ": emacs-editing-mode'
 
@@ -33,19 +33,26 @@
  bind -m vi-command '"dl": "db"'
  bind -m vi-command '"dy": "dW"'
 
+ #add ctrl c as escape
+ bind -m vi-insert '"\C-c": "\C-["'
+ stty intr ^X
+
 ## Insert-mode bindings
 # up arrow or PgUp: append to previous history line
- bind -m vi-insert '"\M-[A": ""'
- bind -m vi-insert '"\M-[5~": ""'
- bind -m vi-insert 'Control-p: previous-history'
+# bind -m vi-insert '"\M-[A": ""'
+# bind -m vi-insert '"\M-[5~": ""'
+# bind -m vi-insert 'Control-p: previous-history'
 # dn arrow or PgDn: append to next history line
- bind -m vi-insert '"\M-[B": ""'
- bind -m vi-insert '"\M-[6~": ""'
- bind -m vi-insert 'Control-n: next-history'
+# bind -m vi-insert '"\M-[B": ""'
+# bind -m vi-insert '"\M-[6~": ""'
+# bind -m vi-insert 'Control-n: next-history'
 # Ctrl-A: insert at line start like in emacs mode
- bind -m vi-insert 'Control-a: beginning-of-line'
+ bind -m vi-insert 'Control-u: previous-history'
+ bind -m vi-insert 'Control-n: backward-kill-word'
+ bind -m vi-insert 'Control-e: next-history'
+ bind -m vi-insert 'Control-s: beginning-of-line'
 # Ctrl-E: append at line end like in emacs mode
- bind -m vi-insert 'Control-e: end-of-line'
+ bind -m vi-insert 'Control-t: end-of-line'
 # Ctrl-D: delete character
  bind -m vi-insert 'Control-d: delete-char'
 # Ctrl-L: clear screen
