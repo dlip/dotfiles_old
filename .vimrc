@@ -239,9 +239,16 @@ nmap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
 
 " Tab
-inoremap <tab> <esc>
-vnoremap <tab> <esc>
-nnoremap <silent> <tab> :noh<cr>
+" Map tab to esc
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
+au VimEnter * map <Tab> <Esc>
+au VimEnter * imap <Tab> <Esc>
+au VimEnter * vmap <Tab> <Esc>
+
 
 " `
 nnoremap ` '
@@ -289,9 +296,13 @@ let NERDTreeMapOpenExpl='' "Normally e
 let NERDTreeMapUpdir='' "Normally u
 let NERDTreeMapOpenSplit='' "Normally i
 
-"Move wiki folder on windows
+"VimWiki
+let g:vimwiki_table_auto_fmt = 0 "this kills my tab as esc
 if has('win32')
+  "Move wiki folder on windows
   let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
+else
+  let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 endif  
 
 "Syntastic
