@@ -80,8 +80,8 @@ noremap P ,
 " G
 nnoremap g g|       " Go to
 "Git commands
-nmap <silent> <leader>gl :silent Git log --graph --abbrev-commit --date=relative<cr>
-nmap <silent> <leader>gs :Gstatus<cr>
+nnoremap <silent> <leader>gl :silent Git log --graph --abbrev-commit --date=relative<cr>
+nnoremap <silent> <leader>gs :Gstatus<cr>
 
 " ----------------------------------------------
 
@@ -125,7 +125,7 @@ nnoremap c y|       " Copy
 onoremap c y
 vnoremap c y
 nnoremap C y$
-nnoremap <C-c> "+Y| " Copy into clipboard      
+vnoremap <C-c> "+Y| " Copy into clipboard      
 cnoremap <C-c> <C-y>
 
 " V
@@ -142,6 +142,7 @@ nnoremap <leader>v :e! ~/.vimrc<cr>| " Fast editing of the .vimrc
 onoremap B iB|      " By default use inner brace matching
 nnoremap b %|       " Match brace
 onoremap b %
+nnoremap <silent><C-b> :CtrlPBuffer<cr>
 
 
 " ----------------------------------------------
@@ -155,7 +156,7 @@ vnoremap j <esc>`.``gvP``P|             " Swap selection for deletion
 noremap l b|       " Word left 
 noremap L zk
 nnoremap + zr|     " Open more folds
-nmap <leader>l :Calendar<cr>
+nnoremap <leader>l :Calendar<cr>
 
 " U
 nnoremap u k|       " Up 
@@ -223,6 +224,7 @@ vnoremap K N|      " Search prev
 " M
 nnoremap m m|      " Create mark
 nnoremap - zm|     " Close more folds
+nnoremap <silent><C-m> :CtrlPMRU<cr>
 
 " ,
 
@@ -230,7 +232,7 @@ nnoremap - zm|     " Close more folds
 nnoremap . .|      " Repeat command  
 
 " /
-nmap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
+nnoremap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 
 " ----------------------------------------------
 " ----------------------------------------------
@@ -244,11 +246,10 @@ nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
+inoremap <s-Tab> <Tab>
 au VimEnter * map <Tab> <Esc>
 au VimEnter * imap <Tab> <Esc>
 au VimEnter * vmap <Tab> <Esc>
-
 
 " `
 nnoremap ` '
@@ -301,8 +302,13 @@ let g:vimwiki_table_auto_fmt = 0 "this kills my tab as esc
 if has('win32')
   "Move wiki folder on windows
   let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
-else
-  let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+elseif has('unix')
+  let hostname = substitute(system('hostname'), '\n', '', '')
+  if hostname == "blanka"
+    let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki_work'}, {'path': '~/Dropbox/vimwiki'}]
+  else
+    let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', '~/Dropbox/vimwiki_work'}]
+  endif
 endif  
 
 "Syntastic
@@ -320,6 +326,9 @@ let g:tagbar_autoclose = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto compile coffeescript
 autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+
+" Auto complile wiki files
+autocmd BufWritePost *.wiki silent Vimwiki2HTML
 
 " When vimrc is edited, reload it
 if has('unix')
