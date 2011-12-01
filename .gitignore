@@ -3,6 +3,7 @@
 !/bin
 !/configs
 !/.bash
+!/.emacs.d
 !/.moc
 !/.ssh
 !/.vim
@@ -12,6 +13,7 @@
 !/.bash_profile
 !/.bashrc
 !/.ctags
+!/.emacs
 !/.gitconfig
 !/.gitignore
 !/.gitmodules

@@ -1,3 +1,45 @@
-set editing-mode vi
-set keymap vi
-set convert-meta on
+# date: 2010-06-15
+# version: 1.0
+# Author: Brendan Miller.
+# Description: this file makes bash's editing shortucts to be ErgoEmacs keybinding, for QWERTY layout.
+# For layout of ErgoEmacs keys, see: http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
+
+# INSTALL
+# to install, rename this file to just ".inputrc"
+# place this file in your home dir. e.g. ~/.inputrc
+# restart your terminal. Then, bash's keybinding for editing
+# should be like ErgoEmacs.
+# If no key works, try replace all \M- to \e. That's means change Meta to Esc key.
+
+# doc about how to edit the bash keybinding, see:
+# http://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+
+set editing-mode emacs
+set bell-style visible
+set expand-tilde on
+set convert-meta off
+set input-meta on
+set output-meta on
+set show-all-if-ambiguous on
+set visible-stats on
+set completion-ignore-case On
+
+"\en": backward-char
+"\ei": forward-char
+"\eu": previous-history
+"\ee": next-history
+"\eh": beginning-of-line
+"\eH": end-of-line
+"\el": backward-word
+"\ey": forward-word
+"\ed": kill-line
+"\ef": backward-kill-word
+"\ep": kill-word
+"\es": backward-delete-char
+"\et": delete-char
+"\ez": undo
+"\ex": kill-region
+"\ec": copy-region-as-kill
+"\ev": yank
+"\e?": forward-search-history
+"\e/": reverse-search-history
