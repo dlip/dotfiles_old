@@ -1,3 +1,4 @@
+"Vrapperrc for colemak
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM Options
@@ -19,6 +20,7 @@ nnoremap w "_c
 vnoremap w "_c
 nnoremap W "_C
 onoremap w iw
+nnoremap ww "_ciw
 
 " F
 nnoremap f f
@@ -183,8 +185,8 @@ nnoremap [[ :GotoPreviousMember<CR>
 " nnoremap <CR> i<CR><Esc>
 
 " Tab
-inoremap <tab> <esc>
-vnoremap <tab> <esc>
+inoremap <Tab> <Esc>`^
+vnoremap <Tab> <Esc>gV
 nnoremap <tab> :noh<cr>
 
 " `

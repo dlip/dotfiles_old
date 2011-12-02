@@ -102,9 +102,6 @@ nnoremap <silent> <leader>s :TagbarToggle<cr>
 " T
 nnoremap t a|       " Append
 nnoremap T A|       " Append to end of line
-inoremap <C-t> <esc>
-vnoremap <C-t> <esc>
-nnoremap <silent> <C-t> :nohlsearch<CR>|
 
 " D
 nnoremap d d|       " Delete
@@ -242,14 +239,11 @@ inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
 
 " Tab
 " Map tab to esc
-nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
 inoremap <s-Tab> <Tab>
-au VimEnter * map <Tab> <Esc>
-au VimEnter * imap <Tab> <Esc>
-au VimEnter * vmap <Tab> <Esc>
+nnoremap <Tab> :noh<cr>
 
 " `
 nnoremap ` '
@@ -331,9 +325,10 @@ autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 autocmd BufWritePost *.wiki silent Vimwiki2HTML
 
 " When vimrc is edited, reload it
+" Some problem with this currently maybe pathogen
 if has('unix')
-  autocmd! bufwritepost .vimrc source ~/.vimrc
+  "autocmd! bufwritepost .vimrc source ~/.vimrc
 elseif has('win32')
-  autocmd! bufwritepost _vimrc source ~/_vimrc
+  "autocmd! bufwritepost _vimrc source ~/_vimrc
 endif  
 

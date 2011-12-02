@@ -46,3 +46,4 @@ set completion-ignore-case On
 "\ev": yank
 "\eO": forward-search-history
 "\eo": reverse-search-history
+"\ea": set-mark
