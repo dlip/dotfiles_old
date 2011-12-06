@@ -5,6 +5,7 @@
 !/.bash
 !/.emacs.d
 !/.moc
+!/.oh-my-zsh
 !/.ssh
 !/.vim
 !/.xmonad

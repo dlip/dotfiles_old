@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/mru"]
 	path = .vim/bundle/mru
 	url = http://github.com/vim-scripts/mru.vim.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = http://github.com/robbyrussell/oh-my-zsh.git
