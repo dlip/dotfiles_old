@@ -24,63 +24,79 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export PATH=/home/dlipscombe/.rvm/gems/ruby-1.8.7-p352/bin:/home/dlipscombe/.rvm/gems/ruby-1.8.7-p352@global/bin:/home/dlipscombe/.rvm/rubies/ruby-1.8.7-p352/bin:/home/dlipscombe/.rvm/bin:/home/dlipscombe/bin:/home/dlipscombe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=~/bin:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
 
-#Colemak vi bash bindings
-bindkey -v
+#Colemak vi / ergoemacs hybrid
 
 # Q
 
 # W
+bindkey -M vicmd 'w' vi-change
 
 # F
+bindkey -M vicmd 'f' vi-find-next-char
+bindkey -M vicmd 'F' vi-find-prev-char
+bindkey '\ef' backward-kill-word
 
 # P
+bindkey -M vicmd 'p' vi-repeat-find
+bindkey -M vicmd 'P' vi-rev-repeat-find
+bindkey '\ep' kill-word
 
 # G
 
 # ----------------------------------------------
 
 # A
+bindkey '\ea' set-mark-command
 
 # R
+bindkey -M vicmd 'r' vi-substitute
 
 # S
-# bindkey -M vicmd 'S: vi-insert-beg'
-# bindkey -M vicmd 's: vi-insertion-mode'
-# bindkey -M viins 'C-s: beginning-of-line'
+bindkey -M vicmd 's' vi-insert
+bindkey -M vicmd 'S' vi-insert-bol
+bindkey '\es' backward-delete-char
 
 # T
-# bindkey -M vicmd 'T: vi-append-eol'
-# bindkey -M vicmd 't: vi-append-mode'
-# bindkey -M viins 'C-t: end-of-line'
+bindkey -M vicmd 't' vi-add-next
+bindkey -M vicmd 'T' vi-add-eol
+bindkey '\et' delete-char
 
 # D
-# bindkey -M vicmd '"dl": "db"'
-# bindkey -M vicmd '"dy": "dW"'
+bindkey -M vicmd 'd' vi-delete
+bindkey '\ed' kill-line
+bindkey '\eD' backward-kill-line
 
 # ----------------------------------------------
 
 # Z
+bindkey -M vicmd 'z' vi-undo-change
+bindkey '\ez' undo
 
 # X
+bindkey -M vicmd 'x' vi-delete-char
+bindkey '\ex' kill-region
 
 # C
-#add ctrl c as escape
-# bindkey -M viins '"\C-c": "\C-["'
-# stty intr ^X
+bindkey -M vicmd 'c' vi-yank
+bindkey '\ec' copy-region-as-kill
 
 # V
+bindkey -M vicmd 'v' vi-put-after
+bindkey '\ev' yank
 
 # B
+bindkey -M vicmd 'b' vi-match-bracket
 
 # ----------------------------------------------
 # ----------------------------------------------
@@ -89,46 +105,59 @@ bindkey -v
 
 # L
 bindkey -M vicmd 'l' vi-backward-word
-# bindkey -M viins 'C-l: clear-screen'
+bindkey '\el' backward-word
+bindkey 'C-l' clear-screen
 
 # U
 bindkey -M vicmd 'u' vi-up-line-or-history
+bindkey '\eu' up-history
 
 # Y
 bindkey -M vicmd 'y' vi-forward-word
+bindkey '\ey' forward-word
 
 # ----------------------------------------------
 
 # H
-# bindkey -M viins 'C-h: backward-kill-word'
+bindkey '\eh' beginning-of-line
+bindkey '\eH' end-of-line
 
 # N
 bindkey -M vicmd 'n' backward-char
-bindkey -M vicmd 'C-n' previous-history
-#bindkey -M viins 'C-n: previous-history'
+bindkey -M vicmd 'N' vi-beginning-of-line
+bindkey '\en' backward-char
+bindkey '\eN' beginning-of-history
 
 # E
 bindkey -M vicmd 'e' vi-down-line-or-history
+bindkey '\ee' down-history
 
 # I
 bindkey -M vicmd 'i' forward-char
-#C-i generates a tab so it overrides autocomplete
-#bindkey -M vicmd 'C-i: next-history'
-#bindkey -M viins 'C-i: next-history'
+bindkey -M vicmd 'I' vi-end-of-line
+bindkey '\ei' forward-char
+bindkey '\eI' end-of-history
 
 # O
+bindkey -M vicmd 'o' vi-open-line-below
+bindkey -M vicmd 'O' vi-open-line-above
 
 # '
 
 # ----------------------------------------------
 
 # K
+bindkey -M vicmd 'k' vi-repeat-search
+bindkey -M vicmd 'K' vi-rev-repeat-search
 
 # M
 
 # ,
 
 # .
+bindkey -M vicmd '.' vi-repeat-change
 
 # /
+bindkey '\e?' history-incremental-search-forward
+bindkey '\e/' history-incremental-search-backward
 
