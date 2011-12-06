@@ -61,3 +61,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = http://github.com/robbyrussell/oh-my-zsh.git
+[submodule "bin/gitflow"]
+	path = bin/gitflow
+	url = http://github.com/nvie/gitflow.git
