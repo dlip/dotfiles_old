@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/dlipscombe/mydatagit/.git/svn'
-let g:netrw_dirhist_2='/home/dlipscombe/dotfiles/bin/out'
-let g:netrw_dirhist_3='/var/www/assessor_store'
