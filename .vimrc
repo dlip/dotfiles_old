@@ -295,7 +295,7 @@ let NERDTreeMapOpenSplit='' "Normally i
 let g:vimwiki_table_auto_fmt = 0 "this kills my tab as esc
 if has('win32')
   "Move wiki folder on windows
-  let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/vimwiki'}]
+  let g:vimwiki_list = [{'path': 'C:/Users/dlipscombe.ASSETIC/Documents/Dropbox/vimwiki'}]
 elseif has('unix')
   let hostname = substitute(system('hostname'), '\n', '', '')
   if hostname == "blanka"

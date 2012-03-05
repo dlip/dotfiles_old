@@ -1,12 +1,6 @@
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/commandt"]
-	path = .vim/bundle/commandt
-	url = http://github.com/vim-scripts/Command-T.git
-[submodule ".vim/bundle/colors-solarized"]
-	path = .vim/bundle/colors-solarized
-	url = http://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/colors-vividchalk"]
 	path = .vim/bundle/colors-vividchalk
 	url = http://github.com/tpope/vim-vividchalk.git
@@ -16,45 +10,24 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/coffee-snippets/snippets"]
-	path = .vim/bundle/coffee-snippets/snippets
-	url = http://github.com/sdiehl/coffee-snippets.git
 [submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = http://github.com/vim-scripts/vimwiki.git
-[submodule ".vim/bundle/xptemplate"]
-	path = .vim/bundle/xptemplate
-	url = http://github.com/drmingdrmer/xptemplate.git
 [submodule ".vim/bundle/unimpared"]
 	path = .vim/bundle/unimpared
 	url = http://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/bundle/dbgpclient"]
-	path = .vim/bundle/dbgpclient
-	url = http://github.com/garyaj/vim-dbgpclient.git
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
 	url = http://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = http://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
-	url = http://github.com/majutsushi/tagbar.git
 [submodule "bin/drushdist"]
 	path = bin/drushdist
 	url = http://git.drupal.org/project/drush.git
-[submodule ".vim/bundle/easymotion"]
-	path = .vim/bundle/easymotion
-	url = http://github.com/Lokaltog/vim-easymotion.git
-[submodule ".vim/bundle/easytags"]
-	path = .vim/bundle/easytags
-	url = http://github.com/xolox/vim-easytags.git
 [submodule ".vim/bundle/mru"]
 	path = .vim/bundle/mru
 	url = http://github.com/vim-scripts/mru.vim.git
