@@ -1,6 +1,6 @@
 [user]
 	name = Dane Lipscombe
-	email = dlipscombe@baselinesolutions.com.au
+	email = dane@77hz.jp
 [color]
     ui = auto
 [alias]
@@ -36,6 +36,6 @@
 [mergetool "vimdiff3"]
 	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [diff]
-	tool = vimdiff
+	tool = meld
 [difftool]
 	prompt = false

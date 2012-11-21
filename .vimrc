@@ -301,7 +301,7 @@ elseif has('unix')
   if hostname == "blanka"
     let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki_work'}, {'path': '~/Dropbox/vimwiki'}]
   else
-    let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', '~/Dropbox/vimwiki_work'}]
+    "let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', '~/Dropbox/vimwiki_work'}]
   endif
 endif  
 
