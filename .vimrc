@@ -26,9 +26,9 @@ set magic           " Set magic on, for regular expressions
 set showmatch       " Show matching bracets when text indicator is over them
 set mat=1           " How many tenths of a second to blink
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-set tabstop=2
+set tabstop=4
 set smarttab
-set shiftwidth=2
+set shiftwidth=4
 set autoindent
 set expandtab
 set backspace=indent,eol,start
@@ -102,10 +102,14 @@ nnoremap <silent> <leader>s :TagbarToggle<cr>
 " T
 nnoremap t a|       " Append
 nnoremap T A|       " Append to end of line
+imap <C-t> <Plug>snipMateNextOrTrigger
+smap <C-t> <Plug>snipMateNextOrTrigger
 
 " D
 nnoremap d "_x|     " Delete char into black hole  
 vnoremap d <esc>`.``gvP``P|             " Swap selection for deletion
+imap <C-d> <Plug>snipMateBack
+smap <C-d> <Plug>snipMateBack
 
 " ----------------------------------------------
 
@@ -224,7 +228,7 @@ nnoremap - zm|     " Close more folds
 nnoremap <silent><C-m> :CtrlPMRU<cr>
 
 " ,
-nnoremap <space> :wa<cr>
+nnoremap , :wa<cr>
 
 " .
 nnoremap . .|      " Repeat command  
@@ -291,6 +295,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "NerdTree Options
 let g:NERDTreeQuitOnOpen = 1
+let NERDTreeMapMenu='M'
 let NERDTreeMapOpenExpl='' "Normally e
 let NERDTreeMapUpdir='' "Normally u
 let NERDTreeMapOpenSplit='' "Normally i
@@ -317,6 +322,7 @@ let g:syntastic_auto_loc_list=1
 "Tagbar
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
