@@ -37,3 +37,6 @@
 [submodule "bin/gitflow"]
 	path = bin/gitflow
 	url = http://github.com/nvie/gitflow.git
+[submodule ".vim/bundle/vim-multiple-cursors"]
+	path = .vim/bundle/vim-multiple-cursors
+	url = http://github.com/terryma/vim-multiple-cursors.git

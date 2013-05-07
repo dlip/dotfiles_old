@@ -104,7 +104,8 @@ nnoremap t a|       " Append
 nnoremap T A|       " Append to end of line
 
 " D
-nnoremap d d|       " Delete
+nnoremap d "_x|     " Delete char into black hole  
+vnoremap d <esc>`.``gvP``P|             " Swap selection for deletion
 
 " ----------------------------------------------
 
@@ -113,8 +114,7 @@ nnoremap z u|       " Undo
 nnoremap Z <C-r>|   " Redo   
 
 " X
-nnoremap x "_x|     " Delete char into black hole  
-vnoremap x <esc>`.``gvP``P|             " Swap selection for deletion
+noremap x d|       " Delete
 nnoremap <C-x> "+dd|" Cut into clipboard       
 
 " C
@@ -224,6 +224,7 @@ nnoremap - zm|     " Close more folds
 nnoremap <silent><C-m> :CtrlPMRU<cr>
 
 " ,
+nnoremap <space> :wa<cr>
 
 " .
 nnoremap . .|      " Repeat command  
@@ -236,6 +237,7 @@ nnoremap <silent> <leader>/ <Esc>:NERDTreeToggle<CR>
 
 " Backspace
 inoremap <C-BS> <C-w>|  " Insert mode delete word backwards
+nnoremap <bs> i<bs><Esc>`^
 
 " Tab
 " Map tab to esc
@@ -244,6 +246,8 @@ onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
 inoremap <s-Tab> <Tab>
 nnoremap <Tab> :noh<cr>
+
+" Space
 
 " `
 nnoremap ` '
