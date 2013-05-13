@@ -32,6 +32,7 @@ set shiftwidth=4
 set autoindent
 set expandtab
 set backspace=indent,eol,start
+set mouse=a
 
 " Turn backup off, since most stuff is in SVN, git anyway...
 set nobackup
@@ -89,6 +90,7 @@ nnoremap <silent> <leader>gs :Gstatus<cr>
 nnoremap a v|     " Visual mode
 nnoremap A V|       " Visual line mode
 nnoremap ar viw|     " Visual mode with word preselected
+nnoremap <C-a> <C-v>
 
 " R
 nnoremap r r|       " Replace
@@ -126,7 +128,7 @@ nnoremap c y|       " Copy
 onoremap c y
 vnoremap c y
 nnoremap C y$
-vnoremap <C-c> "+Y| " Copy into clipboard      
+vnoremap <C-c> "+y| " Copy into clipboard 
 cnoremap <C-c> <C-y>
 
 " V
@@ -134,7 +136,7 @@ nnoremap v ]p|       " Paste
 nnoremap V [P
 vnoremap v pmvgvy`v| " Paste without yank
 vnoremap V P
-nnoremap <C-v> "+p| " Paste into clipboard      
+nnoremap <C-v> "+p| " Paste from clipboard      
 inoremap <C-v> <esc>]pa
 cnoremap <C-v> <C-r>
 nnoremap <leader>v :e! ~/.vimrc<cr>| " Fast editing of the .vimrc
@@ -152,6 +154,7 @@ nnoremap <silent><C-b> :CtrlPBuffer<cr>
 " J
 nnoremap j :call SwapParams("forwards")<cr>
 vnoremap j <esc>`.``gvP``P|             " Swap selection for deletion
+vnoremap <Leader>j !python -m json.tool<CR>
 
 " L
 noremap l b|       " Word left 
@@ -299,6 +302,7 @@ let NERDTreeMapMenu='M'
 let NERDTreeMapOpenExpl='' "Normally e
 let NERDTreeMapUpdir='' "Normally u
 let NERDTreeMapOpenSplit='' "Normally i
+let NERDTreeMapQuit='q'
 
 "VimWiki
 let g:vimwiki_table_auto_fmt = 0 "this kills my tab as esc
