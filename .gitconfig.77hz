@@ -1,0 +1,4 @@
+[user]
+	email = dane@77hz.jp
+[include]
+    path = .gitconfig.general
