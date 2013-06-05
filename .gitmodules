@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = http://github.com/evidens/vim-twig.git
+[submodule ".bash_it"]
+	path = .bash_it
+	url = git@github.com:dlip/bash-it.git

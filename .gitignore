@@ -3,6 +3,7 @@
 !/bin
 !/configs
 !/.bash
+!/.bash_it
 !/.emacs.d
 !/.moc
 !/.oh-my-zsh
@@ -13,6 +14,7 @@
 !/.ackrc
 !/.bash_profile
 !/.bashrc
+!/.bashrc.bak
 !/.ctags
 !/.emacs
 !/.gitconfig
