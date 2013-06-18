@@ -1,0 +1,5 @@
+clear Control
+keycode 102 = Control_L
+add Control = Control_L
+keycode 100 = Control_R
+add Control = Control_R
